@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Xmedia</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      margin: auto;
+      padding-top: 20px;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+    }
+
+    /* Popup Styles */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .popup-box {
+      background: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      animation: slideUp 0.3s ease-in-out;
+      color: #333;
+    }
+
+    .popup-box h2 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .popup-box p {
+      font-size: 15px;
+      margin: 16px 0;
+    }
+
+    .popup-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .popup-buttons button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .popup-buttons button:first-child {
+      background: #e0e0e0;
+      color: #333;
+    }
+
+    .popup-buttons button:last-child {
+      background: #ff3c5f;
+      color: #fff;
+    }
+
+    .popup-buttons button:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .download-button {
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .download-button a {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #ff3c5f;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .download-button a:hover {
+      background: #e6354f;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <video 
+  id="video"
+  autoplay 
+  muted 
+  controls 
+  controlsList="nodownload" 
+  oncontextmenu="return false;"
+>
+  <source src="https://ik.imagekit.io/ohe5v58596/6fee04137190d54db3800026ae1f2e80_720w.mp4?updatedAt=1761478487538" type="video/mp4">
+  Browser kamu tidak mendukung video.
+</video>
+
+</div>
+
+<!-- Download Button -->
+<div class="download-button">
+  <a href="https://ouo.io/H5lYwn" target="_blank" rel="noopener noreferrer">Download Video</a>
+</div>
+
+<!-- Popup Overlay -->
+<div id="popup-overlay" class="popup-overlay">
+  <div class="popup-box">
+    <h2>Konfirmasi Usia</h2>
+    <p>Video ini mengandung konten dewasa. Apakah Anda berusia di atas 18 tahun dan ingin melanjutkan?</p>
+    <div class="popup-buttons">
+      <button onclick="closePopup()">BATAL</button>
+      <button onclick="window.location.href='https://www.effectivegatecpm.com/rkrahkx8xp?key=8acd57de166708ae4babac6f77fbeb66'">LANJUT
+    </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function closePopup() {
+    document.getElementById('popup-overlay').style.display = 'none';
+    // pause video maybe
+    document.getElementById('video').pause();
+  }
+
+  function continueVideo() {
+    document.getElementById('popup-overlay').style.display = 'none';
+    document.getElementById('video').play();
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const video = document.getElementById("video");
+    const popup = document.getElementById("popup-overlay");
+
+    video.addEventListener("play", function () {
+      setTimeout(function () {
+        video.pause();
+        popup.style.display = "flex";
+      }, 7000); // 7 detik
+    });
+  });
+</script>
+
+</body>
+  </html>
+  
